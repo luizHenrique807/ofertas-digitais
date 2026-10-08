@@ -14,11 +14,13 @@ document.querySelectorAll('[data-asset]').forEach(img => {
   if (ASSETS[key]) img.src = ASSETS[key];
 });
 
-// Preencha quando o checkout for definido.
+// Preencha aqui quando o link do checkout estiver definido.
 const CHECKOUT_URL = "";
 
 document.querySelectorAll('.checkout-link').forEach(link => {
   link.addEventListener('click', event => {
+    event.preventDefault();
+
     if (typeof fbq === 'function') {
       fbq('track', 'InitiateCheckout', {
         content_name: 'Solda do Zero',
@@ -28,15 +30,21 @@ document.querySelectorAll('.checkout-link').forEach(link => {
     }
 
     if (CHECKOUT_URL) {
-      event.preventDefault();
       window.location.href = CHECKOUT_URL;
-      return;
     }
+  });
+});
 
-    if (link.getAttribute('href') === '#') {
-      event.preventDefault();
-      document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
-    }
+document.querySelectorAll('.scroll-link').forEach(link => {
+  link.addEventListener('click', event => {
+    const target = link.getAttribute('href');
+    if (!target || !target.startsWith('#')) return;
+
+    const element = document.querySelector(target);
+    if (!element) return;
+
+    event.preventDefault();
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
