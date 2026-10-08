@@ -1,45 +1,20 @@
 const ASSETS = {
-  hero: 'assets/hero-codigo-da-solda.png',
-  modulo01: 'assets/modulo-01.png',
-  modulo02: 'assets/modulo-02.png',
-  modulo03: 'assets/modulo-03.png',
-  modulo04: 'assets/modulo-04.png',
-  modulo05: 'assets/modulo-05.png',
-  modulo06: 'assets/modulo-06.png',
-  modulo07: 'assets/modulo-07.png',
-  modulo08: 'assets/modulo-08.png'
-};
-
-// Enquanto os PNGs novos ainda não estiverem no repositório,
-// mantém fallback para os arquivos antigos para a página não quebrar.
-const FALLBACK_ASSETS = {
-  hero: 'assets/modulo-01.webp',
-  modulo01: 'assets/modulo-01.webp',
-  modulo02: 'assets/modulo-02.webp',
-  modulo03: 'assets/modulo-03.webp',
-  modulo04: 'assets/modulo-04.webp',
-  modulo05: 'assets/modulo-05.webp',
-  modulo06: 'assets/modulo-06.webp',
-  modulo07: 'assets/modulo-07.webp',
-  modulo08: 'assets/modulo-08.webp'
+  hero: 'assets/hero-codigo-da-solda.png?v=20261008-3',
+  modulo01: 'assets/modulo-01.png?v=20261008-3',
+  modulo02: 'assets/modulo-02.png?v=20261008-3',
+  modulo03: 'assets/modulo-03.png?v=20261008-3',
+  modulo04: 'assets/modulo-04.png?v=20261008-3',
+  modulo05: 'assets/modulo-05.png?v=20261008-3',
+  modulo06: 'assets/modulo-06.png?v=20261008-3',
+  modulo07: 'assets/modulo-07.png?v=20261008-3',
+  modulo08: 'assets/modulo-08.png?v=20261008-3'
 };
 
 document.querySelectorAll('[data-asset]').forEach(img => {
   const key = img.dataset.asset;
-  if (!ASSETS[key]) return;
-
-  img.onerror = () => {
-    const fallback = FALLBACK_ASSETS[key];
-    if (fallback && img.src.indexOf(fallback) === -1) {
-      img.onerror = null;
-      img.src = fallback;
-    }
-  };
-
-  img.src = ASSETS[key];
+  if (ASSETS[key]) img.src = ASSETS[key];
 });
 
-// Preencha aqui quando o link do checkout estiver definido.
 const CHECKOUT_URL = "";
 
 document.querySelectorAll('.checkout-link').forEach(link => {
@@ -54,9 +29,7 @@ document.querySelectorAll('.checkout-link').forEach(link => {
       });
     }
 
-    if (CHECKOUT_URL) {
-      window.location.href = CHECKOUT_URL;
-    }
+    if (CHECKOUT_URL) window.location.href = CHECKOUT_URL;
   });
 });
 
