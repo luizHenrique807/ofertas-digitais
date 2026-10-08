@@ -196,3 +196,172 @@
   .module__image{height:auto!important;min-height:360px;display:flex;align-items:center;justify-content:center}
   .module__image img{max-width:340px!important;max-height:410px!important}
 }
+
+/* ===== REFINO MOBILE DA PRIMEIRA DOBRA ===== */
+@media(max-width:620px){
+  /* O topo deixa de ser fixo e a barra inferior some por completo. */
+  .topbar{
+    position:relative!important;
+    top:auto!important;
+    backdrop-filter:none;
+    background:#0a0807
+  }
+  .mobile-buy{
+    display:none!important
+  }
+  footer{
+    padding-bottom:45px!important
+  }
+
+  .topbar__inner{
+    height:64px
+  }
+  .brand{
+    gap:9px
+  }
+  .brand__mark{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    font-size:17px
+  }
+  .brand strong{
+    font-size:12px;
+    letter-spacing:.8px
+  }
+  .topbar__cta{
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:8.5px
+  }
+
+  .hero{
+    padding:34px 0 46px!important;
+    background:
+      radial-gradient(circle at 68% 35%,rgba(244,122,32,.12),transparent 34%),
+      linear-gradient(145deg,#090807 0%,#17100c 66%,#0c0907 100%)
+  }
+  .hero__grid{
+    gap:24px!important
+  }
+  .hero__copy{
+    text-align:left!important
+  }
+  .eyebrow{
+    justify-content:flex-start!important;
+    gap:8px;
+    font-size:9px;
+    letter-spacing:1.35px
+  }
+  .eyebrow span{
+    width:28px;
+    height:2px
+  }
+
+  .hero h1{
+    max-width:350px;
+    margin-top:15px;
+    font-size:31px!important;
+    line-height:.98!important;
+    letter-spacing:-1px!important
+  }
+  .hero h1 em{
+    margin:3px 0
+  }
+
+  .hero__lead{
+    margin-top:18px!important;
+    font-size:13.5px!important;
+    line-height:1.65!important;
+    color:#c7beb7;
+    max-width:360px
+  }
+
+  .quick-list{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:9px!important;
+    max-width:none!important;
+    margin:22px 0 0!important;
+    text-align:left!important
+  }
+  .quick-list span{
+    position:relative;
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    padding:10px 10px 10px 37px;
+    border:1px solid rgba(244,122,32,.15);
+    border-radius:10px;
+    background:rgba(255,255,255,.025);
+    color:#eee6e0;
+    font-size:10.5px;
+    line-height:1.25
+  }
+  .quick-list span::before{
+    content:"✓";
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    width:19px;
+    height:19px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(244,122,32,.13);
+    border:1px solid rgba(244,122,32,.38);
+    color:var(--orange);
+    font-size:11px;
+    font-weight:900
+  }
+  .quick-list span::first-letter{
+    color:inherit
+  }
+
+  .trust--hero{
+    margin-top:18px!important;
+    justify-content:flex-start!important;
+    gap:8px 12px!important;
+    color:#8e857f!important;
+    font-size:8.5px!important
+  }
+  .button--ghost{
+    width:100%!important;
+    max-width:none!important;
+    margin-top:18px!important;
+    padding:14px 18px!important;
+    border-radius:10px!important;
+    font-size:10.5px!important
+  }
+
+  .hero__visual{
+    min-height:340px!important;
+    height:auto!important;
+    margin-top:0!important
+  }
+  .hero__product{
+    width:min(100%,360px)!important;
+    max-height:360px!important
+  }
+}
+
+@media(max-width:390px){
+  .wrap{
+    width:min(100% - 24px,1160px)
+  }
+  .hero h1{
+    font-size:29px!important
+  }
+  .quick-list{
+    gap:7px!important
+  }
+  .quick-list span{
+    min-height:46px;
+    padding:9px 8px 9px 34px;
+    font-size:9.8px
+  }
+  .quick-list span::before{
+    left:8px
+  }
+}
