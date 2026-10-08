@@ -1,14 +1,24 @@
-// Imagens incorporadas ao próprio repositório.
+const ASSETS = {
+  modulo01: 'assets/modulo-01.webp',
+  modulo02: 'assets/modulo-02.webp',
+  modulo03: 'assets/modulo-03.webp',
+  modulo04: 'assets/modulo-04.webp',
+  modulo05: 'assets/modulo-05.webp',
+  modulo06: 'assets/modulo-06.webp',
+  modulo07: 'assets/modulo-07.webp',
+  modulo08: 'assets/modulo-08.webp'
+};
+
 document.querySelectorAll('[data-asset]').forEach(img => {
   const key = img.dataset.asset;
-  if (window.CDS_ASSETS && window.CDS_ASSETS[key]) img.src = window.CDS_ASSETS[key];
+  if (ASSETS[key]) img.src = ASSETS[key];
 });
-// Troque apenas esta linha quando o checkout estiver disponível.
+
+// Preencha quando o checkout for definido.
 const CHECKOUT_URL = "";
 
-const checkoutLinks = document.querySelectorAll('.checkout-link');
-checkoutLinks.forEach(link => {
-  link.addEventListener('click', (event) => {
+document.querySelectorAll('.checkout-link').forEach(link => {
+  link.addEventListener('click', event => {
     if (typeof fbq === 'function') {
       fbq('track', 'InitiateCheckout', {
         content_name: 'Solda do Zero',
@@ -20,9 +30,12 @@ checkoutLinks.forEach(link => {
     if (CHECKOUT_URL) {
       event.preventDefault();
       window.location.href = CHECKOUT_URL;
-    } else if (link.getAttribute('href') === '#') {
+      return;
+    }
+
+    if (link.getAttribute('href') === '#') {
       event.preventDefault();
-      document.querySelector('#oferta')?.scrollIntoView({behavior:'smooth'});
+      document.querySelector('#oferta')?.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
@@ -34,6 +47,6 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, {threshold: 0.08});
+}, { threshold: 0.08 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
