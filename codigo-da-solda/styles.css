@@ -2,3 +2,91 @@
 @media(max-width:900px){.wrap{width:min(100% - 28px,1160px)}.topbar__inner{height:66px}.brand small{display:none}.brand strong{font-size:13px}.brand__mark{width:38px;height:38px}.topbar__cta{padding:11px 13px;font-size:9px}.hero{padding:53px 0 60px}.hero__grid{grid-template-columns:1fr;gap:30px}.hero__copy{text-align:center}.eyebrow{justify-content:center}.hero h1{font-size:44px;letter-spacing:-1.7px}.hero__lead{font-size:15px;margin-inline:auto}.quick-list{max-width:550px;margin:24px auto 0;text-align:left}.trust{justify-content:center}.hero__visual{height:500px;max-width:620px;width:100%;margin:auto}.benefit-strip__grid{grid-template-columns:1fr 1fr}.benefit-strip__grid>div{border-bottom:1px solid rgba(255,255,255,.06)}.section{padding:75px 0}.cards-3,.module-list,.split,.split--who,.offer__grid,.final-cta__grid{grid-template-columns:1fr}.module-list{max-width:700px}.module{min-height:340px}.process-card--hot{transform:none}.not-course__grid{grid-template-columns:1fr;text-align:center}.not-course__grid>span{font-size:78px}.offer__copy h2{text-align:center}.offer__copy .section-label{text-align:center}.checkout-card{max-width:500px;margin:auto}.guarantee__grid{grid-template-columns:1fr;text-align:center}.guarantee__seal{margin:auto}.final-cta{text-align:center}.final-cta p{margin-inline:auto}.final-cta .button{margin-inline:auto}.final-cta img{max-width:500px;margin:auto}}
 @media(max-width:620px){.hero h1{font-size:36px}.quick-list{grid-template-columns:1fr;max-width:300px}.hero__visual{height:410px}.hero__book--front{width:90%}.hero__book--mid{width:62%;right:-8%}.hero__book--back{display:none}.benefit-strip__grid{grid-template-columns:1fr}.benefit-strip__grid>div{padding:16px 4px;border-right:0}.section h2,.guarantee h2,.final-cta h2{font-size:31px}.cards-3{grid-template-columns:1fr}.module{grid-template-columns:1fr}.module__image{height:390px}.module__copy{padding:24px}.not-course h2{font-size:31px}.offer__copy h2{font-size:35px}.checkout-card{padding:31px 20px}.final-cta h2{font-size:34px}footer{padding-bottom:110px}.mobile-buy{position:fixed;left:0;right:0;bottom:0;z-index:200;display:flex;align-items:center;justify-content:space-between;background:#0b0908;border-top:1px solid #3a2417;padding:9px 13px;box-shadow:0 -9px 30px rgba(0,0,0,.35)}.mobile-buy small,.mobile-buy b{display:block}.mobile-buy small{font-size:8px;color:#8d8580}.mobile-buy b{font-size:21px}.mobile-buy a{background:var(--orange);color:#17100c;text-decoration:none;font-size:10px;font-weight:950;padding:12px 14px;border-radius:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button{transition:none}}
+
+/* Ajustes de conversão e nitidez */
+.hero__price{display:none!important}
+.trust--hero{margin-top:30px}
+.button--ghost{
+  margin-top:20px;
+  padding:17px 24px;
+  color:#fff;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:none
+}
+.button--ghost:hover{
+  border-color:rgba(244,122,32,.7);
+  background:rgba(244,122,32,.07);
+  transform:translateY(-2px)
+}
+.hero__visual{
+  height:570px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible
+}
+.hero__glow{
+  width:390px;
+  height:390px;
+  right:9%;
+  top:16%;
+  filter:blur(105px);
+  opacity:.16
+}
+.hero__book{
+  height:auto!important;
+  max-height:none;
+  image-rendering:auto;
+  backface-visibility:hidden;
+  transform-origin:center bottom
+}
+.hero__book--front{
+  width:61%;
+  left:8%;
+  top:4%;
+  z-index:3
+}
+.hero__book--mid{
+  width:48%;
+  right:5%;
+  top:12%;
+  z-index:2;
+  transform:rotate(4deg);
+  opacity:.92
+}
+.hero__book--back{
+  width:39%;
+  right:-2%;
+  top:20%;
+  z-index:1;
+  transform:rotate(7deg);
+  opacity:.7
+}
+.module__image img{
+  width:min(100%,260px);
+  height:auto;
+  max-height:340px
+}
+.workshop-card img{
+  aspect-ratio:auto;
+  max-height:520px;
+  object-fit:contain;
+  background:#120d0a
+}
+
+@media(max-width:900px){
+  .hero__visual{height:490px}
+  .hero__book--front{width:62%;left:13%;top:2%}
+  .hero__book--mid{width:45%;right:4%;top:13%}
+  .hero__book--back{width:34%;right:1%;top:22%}
+}
+
+@media(max-width:620px){
+  .hero__visual{height:390px;margin-top:8px}
+  .hero__book--front{width:70%;left:8%;top:0}
+  .hero__book--mid{width:48%;right:-3%;top:12%}
+  .hero__book--back{display:none}
+  .button--ghost{width:100%;max-width:360px}
+  .module__image img{width:min(100%,300px);max-height:370px}
+}
