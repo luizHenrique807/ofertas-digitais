@@ -15,7 +15,7 @@ document.querySelectorAll('[data-asset]').forEach(img => {
   if (ASSETS[key]) img.src = ASSETS[key];
 });
 
-const CHECKOUT_URL = "";
+const CHECKOUT_URL = "https://pay.cakto.com.br/36w75ay_1183436";
 
 document.querySelectorAll('.checkout-link').forEach(link => {
   link.addEventListener('click', event => {
