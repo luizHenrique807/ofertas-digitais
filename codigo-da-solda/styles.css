@@ -112,3 +112,87 @@
   .hero__book--mid{width:190px!important;right:-2%;top:14%}
   .module__image img{width:240px!important}
 }
+
+/* ===== VISUAIS DE ALTA RESOLUÇÃO / FUNDO TRANSPARENTE ===== */
+.hero__visual{
+  min-height:570px;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+  position:relative
+}
+.hero__product{
+  position:relative;
+  z-index:2;
+  display:block;
+  width:min(100%,620px);
+  max-height:610px;
+  object-fit:contain;
+  filter:drop-shadow(0 28px 38px rgba(0,0,0,.42))
+}
+.hero__glow{
+  position:absolute;
+  width:430px;
+  height:430px;
+  right:7%;
+  top:13%;
+  border-radius:50%;
+  background:var(--orange);
+  opacity:.12;
+  filter:blur(130px)
+}
+.hero__price{display:none!important}
+.trust--hero{margin-top:28px}
+
+/* O PNG já tem transparência: não colocar um retângulo escuro atrás. */
+.module__image{
+  background:transparent!important;
+  padding:18px 12px;
+  overflow:visible
+}
+.module__image img{
+  width:100%!important;
+  max-width:330px!important;
+  height:auto!important;
+  max-height:390px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 16px 22px rgba(32,20,12,.18))
+}
+.workshop-card{
+  background:#17120f;
+  overflow:hidden
+}
+.workshop-card>img{
+  width:min(100%,460px)!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  margin:20px auto 0;
+  background:transparent!important;
+  filter:drop-shadow(0 20px 28px rgba(0,0,0,.28))
+}
+.final-cta__product{
+  width:min(100%,560px)!important;
+  max-height:560px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 24px 34px rgba(0,0,0,.36));
+  mask-image:none!important
+}
+
+/* Remove as regras antigas dos três livros do hero. */
+.hero__book{display:none!important}
+
+@media(max-width:900px){
+  .hero__visual{min-height:500px}
+  .hero__product{width:min(100%,560px);max-height:540px}
+  .module__image img{max-width:360px!important}
+}
+@media(max-width:620px){
+  .hero__visual{min-height:390px;margin-top:12px}
+  .hero__product{width:min(100%,390px);max-height:410px}
+  .module__image{height:auto!important;min-height:360px;display:flex;align-items:center;justify-content:center}
+  .module__image img{max-width:340px!important;max-height:410px!important}
+}
