@@ -90,3 +90,25 @@
   .button--ghost{width:100%;max-width:360px}
   .module__image img{width:min(100%,300px);max-height:370px}
 }
+
+/* Mantém os mockups na resolução nativa para evitar borrado */
+.hero__visual{min-width:430px}
+.hero__book--front{width:240px!important;left:14%;top:3%}
+.hero__book--mid{width:220px!important;right:7%;top:13%}
+.hero__book--back{width:190px!important;right:0;top:22%}
+.workshop-card{display:grid;place-items:center}
+.workshop-card>img{width:240px!important;max-width:100%;height:auto!important;margin:28px auto 8px;display:block}
+.workshop-card>div{width:100%}
+.module__image img{width:220px!important;max-width:100%;height:auto!important}
+
+@media(max-width:900px){
+  .hero__visual{min-width:0}
+  .hero__book--front{width:240px!important;left:18%;top:2%}
+  .hero__book--mid{width:210px!important;right:10%;top:14%}
+  .hero__book--back{width:180px!important;right:4%;top:23%}
+}
+@media(max-width:620px){
+  .hero__book--front{width:220px!important;left:8%;top:0}
+  .hero__book--mid{width:190px!important;right:-2%;top:14%}
+  .module__image img{width:240px!important}
+}
