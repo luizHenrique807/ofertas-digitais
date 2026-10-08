@@ -523,3 +523,33 @@
     font-size:9.5px;
   }
 }
+
+/* ===== LOGO REAL DA MARCA NO CABEÇALHO ===== */
+.brand__mark--logo{
+  background:linear-gradient(145deg,#3a2116,#1b100b)!important;
+  border:1px solid rgba(244,122,32,.55);
+  box-shadow:0 8px 22px rgba(244,122,32,.18)!important;
+  overflow:hidden;
+}
+.brand__logo-svg{
+  display:block;
+  width:84%;
+  height:84%;
+}
+
+/* Remove qualquer espaço residual do antigo bloco ilustrativo do depoimento. */
+.testimonial-media{
+  display:none!important;
+}
+
+@media(max-width:620px){
+  .brand__mark--logo{
+    width:38px!important;
+    height:38px!important;
+    border-radius:10px!important;
+  }
+  .brand__logo-svg{
+    width:88%;
+    height:88%;
+  }
+}
