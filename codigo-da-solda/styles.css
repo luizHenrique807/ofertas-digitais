@@ -553,3 +553,13 @@
     height:88%;
   }
 }
+
+/* ===== CABEÇALHO SEM POSIÇÃO FIXA ===== */
+.topbar{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  z-index:20;
+  backdrop-filter:none!important;
+}
